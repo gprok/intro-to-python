@@ -53,17 +53,18 @@ class HangmanModel:
             return False
 
 
-hangman = HangmanModel()
-hangman.start()
-while True:
-    print(hangman.get_secret())
-    letter = input("Guess: ")
-    hangman.play(letter)
-    if hangman.found():
-        print(hangman.word + " found!")
-        break
-    if hangman.hanged():
-        print("You are hanged!")
-        break
+if __name__ == '__main__':
+    hangman = HangmanModel()
+    hangman.start()
+    while True:
+        print(hangman.get_secret())
+        letter = input("Guess: ")
+        hangman.play(letter)
+        if hangman.found():
+            print(hangman.word + " found!")
+            break
+        if hangman.hanged():
+            print("You are hanged!")
+            break
 
 
